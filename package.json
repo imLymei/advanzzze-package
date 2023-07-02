@@ -1,0 +1,21 @@
+{
+	"name": "advanzzze",
+	"version": "1.2.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bin": {
+		"advanzzze": "bin/index.js"
+	},
+	"dependencies": {
+		"inquirer": "^9.2.7",
+		"log-update": "^5.0.1",
+		"shelljs": "^0.8.5"
+	},
+	"type": "module"
+}

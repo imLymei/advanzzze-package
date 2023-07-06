@@ -62,7 +62,7 @@ cn('classes padrão', {
 ```javascript
 import cn from '@/utils/cn';
 
-export default function Home({ bgColor }) {
+export default function Card({ bgColor, children }) {
 	const isBlue = bgColor === 'blue';
 	const isRed = bgColor === 'red';
 	const isGreen = bgColor === 'green';
@@ -74,11 +74,24 @@ export default function Home({ bgColor }) {
 				'bg-red-500': isRed,
 				'bg-green-500': isGreen,
 			})}>
-			...
+			{children}
 		</div>
 	);
 }
 ```
+
+## Roadmap
+
+- Adicionar mais funções utilitárias.
+
+- Adicionar menu para escolha dos utilitários.
+
+- Adicionar suporte para criação de aplicativos mobile.
+
+## Autores
+
+- [@imLymei](https://github.com/imLymei/)
+- [@kevynlopes](https://github.com/kevynlopes)
 
 ## Licença
 

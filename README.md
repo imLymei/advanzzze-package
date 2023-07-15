@@ -46,7 +46,7 @@
 
 ### cn
 
-`cn` é uma função personalizada que utiliza [clsx](https://www.npmjs.com/package/clsx) e [tailwind-merge](https://www.npmjs.com/package/tailwind-merge) para, respectivamente, criar classes condicionalmente e juntá-las sem conflitos com o Tailwind CSS."
+`cn` é uma função personalizada que utiliza [clsx](https://www.npmjs.com/package/clsx) e [tailwind-merge](https://www.npmjs.com/package/tailwind-merge) para, respectivamente, criar classes condicionalmente e juntá-las sem conflitos com o Tailwind CSS.
 
 #### Utilização
 

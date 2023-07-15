@@ -1,7 +1,6 @@
 #! /usr/bin/env node
 import inquirer from 'inquirer';
 import { createNextProject } from './utils/project.js';
-import installTauri from './utils/tauri.js';
 
 const questions = [
 	{

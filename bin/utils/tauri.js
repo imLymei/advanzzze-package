@@ -16,9 +16,18 @@ export default function installTauri() {
 		} else {
 			endLog(0);
 
-			console.log('\nAdicione:\n"scripts": {\n    "tauri": "tauri"\n}\nem package.json\n');
-			console.log('Execute: \n    npm run tauri init\n    npm run tauri dev\n');
-			console.log('For more information visit: https://tauri.app/v1/guides/getting-started/setup/next-js/');
+			try {
+				const packageFile = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
+
+				packageFile.scripts['tauri'] = 'tauri';
+
+				fs.writeFileSync('./package.json', JSON.stringify(packageFile, null, 4));
+
+				console.log('Execute: \n    npm run tauri init\n    npm run tauri dev\n');
+				console.log('For more information visit: https://tauri.app/v1/guides/getting-started/setup/next-js/');
+			} catch (err) {
+				console.error(err);
+			}
 		}
 	});
 }

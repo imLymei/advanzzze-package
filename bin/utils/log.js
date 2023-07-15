@@ -1,3 +1,4 @@
+import { Chalk } from 'chalk';
 import logUpdate from 'log-update';
 
 const loadingFrames = ['', '.', '..', '...'];
@@ -6,19 +7,21 @@ let globalText = '';
 
 var interval = null;
 
+export const chalk = new Chalk();
+
 export function startLog(text) {
 	if (interval != null) endLog();
 	interval = setInterval(() => {
 		const frame = loadingFrames[(index = ++index % loadingFrames.length)];
 
-		logUpdate(`${text}${frame}`);
+		logUpdate(`${chalk.cyan('-')} ${text}${frame}`);
 	}, 250);
 	globalText = text;
 }
 
 export function endLog(value) {
 	clearInterval(interval);
-	logUpdate(`${globalText} ${value == 0 ? '✓' : 'x'}\n`);
+	logUpdate(`${chalk.cyan('-')} ${globalText} ${value == 0 ? chalk.green('✓') : chalk.red('x')}\n`);
 	interval = null;
 	logUpdate.done();
 }

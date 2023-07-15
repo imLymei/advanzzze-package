@@ -1,6 +1,9 @@
 #! /usr/bin/env node
 import inquirer from 'inquirer';
-import { createNextProject } from './utils/project.js';
+import createNextProject from './utils/createNextProject.js';
+import createCn from './utils/createCn.js';
+import { installTwPrettier } from './utils/instalUtils.js';
+import installTauri from './utils/installTauri.js';
 
 const questions = [
 	{
@@ -19,13 +22,18 @@ const questions = [
 
 console.log('');
 
-inquirer.prompt(questions).then((answers) => {
+inquirer.prompt(questions).then(async (answers) => {
 	const { projectLanguage, projectType } = answers;
+
+	let hasError = '';
 
 	console.log('');
 
 	const isTypescript = projectLanguage == 'typescript';
 	const isDesktop = projectType == 'desktop';
 
-	createNextProject(isTypescript, isDesktop);
+	await createNextProject(isTypescript).catch((error) => (hasError = error));
+	if (!hasError) await createCn(isTypescript).catch((error) => (hasError = error));
+	if (!hasError) await installTwPrettier().catch((error) => (hasError = error));
+	if (!hasError && isDesktop) installTauri();
 });

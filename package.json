@@ -13,9 +13,11 @@
 		"advanzzze": "bin/index.js"
 	},
 	"dependencies": {
+		"clsx": "^1.2.1",
 		"inquirer": "^9.2.7",
 		"log-update": "^5.0.1",
-		"shelljs": "^0.8.5"
+		"shelljs": "^0.8.5",
+		"tailwind-merge": "^1.13.2"
 	},
 	"type": "module"
 }

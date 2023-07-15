@@ -6,7 +6,7 @@ const nextConfig =
 	"/** @type {import('next').NextConfig} */\nconst nextConfig = {\n    output: 'export',\n    images: { unoptimized: true },\n};\n\nmodule.exports = nextConfig";
 
 export default function installTauri() {
-	startLog(`Installing ${chalk.cyan(Tauri)}`);
+	startLog(`Installing ${chalk.cyan('Tauri')}`);
 
 	fs.writeFileSync(`./next.config.js`, nextConfig);
 	fs.appendFileSync('./.gitignore', '\n/src-tauri/');

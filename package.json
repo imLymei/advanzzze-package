@@ -29,7 +29,6 @@
 		"advanzzze": "bin/index.js"
 	},
 	"dependencies": {
-		"advanzzze": "^1.2.6",
 		"clsx": "^1.2.1",
 		"commander": "^11.0.0",
 		"inquirer": "^9.2.7",

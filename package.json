@@ -6,15 +6,34 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
-	"keywords": [],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/imLymei/advanzzze-package"
+	},
+	"keywords": [
+		"Next.js",
+		"Tauri",
+		"Web",
+		"Desktop",
+		"Typescript",
+		"Project Configuration",
+		"Project Creation"
+	],
 	"author": "",
 	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/imLymei/advanzzze-package/issues"
+	},
+	"homepage": "https://npx.advanzzze.com",
 	"bin": {
 		"advanzzze": "bin/index.js"
 	},
 	"dependencies": {
+		"advanzzze": "^1.2.6",
 		"clsx": "^1.2.1",
+		"commander": "^11.0.0",
 		"inquirer": "^9.2.7",
+		"link": "^1.5.1",
 		"log-update": "^5.0.1",
 		"shelljs": "^0.8.5",
 		"tailwind-merge": "^1.13.2"
